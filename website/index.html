@@ -527,10 +527,10 @@
           <div class="schema-label">cx.vmx.matadisco</div>
           <pre><code><span class="comment">/// A Matadisco record</span>
 <span class="keyword">record</span> matadisco {
-    <span class="comment">/// The time the metadata record was created</span>
-    created!: <span class="type">Datetime</span>,
-    <span class="comment">/// A URI containing metadata</span>
-    metadata!: <span class="type">Uri</span>,
+    <span class="comment">/// The time the original metadata/data was published</span>
+    publishedAt!: <span class="type">Datetime</span>,
+    <span class="comment">/// A URI that links to resource containing the metadata</span>
+    resource!: <span class="type">Uri</span>,
     <span class="comment">/// Preview of the data</span>
     preview: {
         <span class="comment">/// The media type the preview has</span>
@@ -541,7 +541,7 @@
 }</code></pre>
         </div>
         <p>
-          Only <code>metadata</code> and <code>created</code> are required. The preview is optional — for satellite imagery it's a thumbnail, for articles a summary, for podcasts an audio snippet.
+          Only <code>resource</code> and <code>publishdAt</code> are required. The preview is optional — for satellite imagery it's a thumbnail, for articles a summary, for podcasts an audio snippet.
         </p>
         <p>
           <a href="https://pdsls.dev/at://cx.vmx.matadisco">Browse records</a> &middot; <a href="https://lexicon.garden/lexicon/did:plc:3mdq56yhyqq5k6d4guztheaf/cx.vmx.matadisco">View published lexicon</a>

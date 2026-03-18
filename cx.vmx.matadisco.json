@@ -10,19 +10,19 @@
       "record": {
         "type": "object",
         "required": [
-          "created",
-          "metadata"
+          "publishedAt",
+          "resource"
         ],
         "properties": {
-          "created": {
+          "publishedAt": {
             "type": "string",
             "format": "datetime",
-            "description": "The time the metadata record was created"
+            "description": "The time the original metadata/data was published"
           },
-          "metadata": {
+          "resource": {
             "type": "string",
             "format": "uri",
-            "description": "A URI containing metadata"
+            "description": "A URI that links to resource containing the metadata"
           },
           "preview": {
             "type": "object",
