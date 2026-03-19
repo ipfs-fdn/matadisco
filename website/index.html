@@ -460,10 +460,10 @@
       <header class="hero fade-in">
         <h1><span class="highlight">Matadisco</span></h1>
         <p class="tagline">
-          An open, decentralized network for data discovery. Publish metadata about any dataset to <a href="https://atproto.com/">ATProto</a>. Build community portals. Find what matters.
+          An open, decentralized network for data discovery. Publish metadata about any dataset to <a href="https://atproto.com/">AT Protocol</a>. Build community portals. Find what matters.
         </p>
         <div class="actions">
-          <a href="https://github.com/vmx/matadisco" class="btn btn-primary">View on GitHub &rarr;</a>
+          <a href="https://github.com/ipfs-fdn/matadisco" class="btn btn-primary">View on GitHub &rarr;</a>
           <a href="https://vmx.github.io/matadisco-viewer/" class="btn btn-secondary">Live demo</a>
         </div>
       </header>
@@ -487,30 +487,29 @@
       <section id="how" class="fade-in">
         <h2>How Matadisco works</h2>
         <p>Matadisco separates data discovery from data storage. Three pieces work together:</p>
-        <p>The schema is intentionally minimal — Matadisco is about discovery, not about prescribing how metadata should be structured. Whatever standard your community already uses, Matadisco can point to it.</p>
 
         <div class="steps">
           <div class="step">
             <div class="step-num"></div>
             <div class="step-content">
-              <h3>Records</h3>
-              <p>Lightweight pointers to metadata. A record contains a link to the actual metadata, an optional preview, and a timestamp. That's it — this minimal schema works with any metadata standard: <a href="https://stacspec.org/">STAC</a>, <a href="https://datacite.org/">DataCite</a>, <a href="https://iiif.io/">IIIF</a>, RSS, and more.</p>
+              <h3>AT Protocol</h3>
+              <p>Matadisco is built on <a href="https://atproto.com/">AT Protocol</a>, an open social protocol. Every record is cryptographically signed. No single entity controls the network and all components are open source and can be self-hosted.</p>
             </div>
           </div>
 
           <div class="step">
             <div class="step-num"></div>
             <div class="step-content">
-              <h3>Network</h3>
-              <p>Records are published to <a href="https://atproto.com/">ATProto</a>, where relay nodes aggregate and redistribute them across the ecosystem. Every record is cryptographically signed. No single entity controls the network.</p>
+              <h3>Producers</h3>
+              <p>Write Matadisco records to a PDS (Personal Data Server). A record is a lightweight pointer to metadata — a link, an optional preview, and a timestamp — so the schema works with any metadata standard: <a href="https://stacspec.org/">STAC</a>, <a href="https://datacite.org/">DataCite</a>, <a href="https://iiif.io/">IIIF</a>, RSS, and more. A producer typically watches an existing catalogue or data source and publishes records automatically.</p>
             </div>
           </div>
 
           <div class="step">
             <div class="step-num"></div>
             <div class="step-content">
-              <h3>Portals</h3>
-              <p>Subscribe to a relay, filter for records relevant to your community, and display them. A satellite imagery portal, a <em>scientific data</em> hub, a cultural heritage archive — each built in about 100 lines of code.</p>
+              <h3>Consumers</h3>
+              <p>Read records from the network via a PDS or <a href="https://github.com/bluesky-social/jetstream">Jetstream</a>, filter for what's relevant, and present them as a web-based portal for users. A satellite imagery portal, a <em>scientific data</em> hub, a cultural heritage archive — each built in about 100 lines of code.</p>
             </div>
           </div>
         </div>
@@ -573,15 +572,17 @@
 
       <hr class="divider fade-in">
 
-      <!-- Portals -->
-      <section id="portals" class="fade-in">
-        <h2>Building portals</h2>
+      <!-- Producers & Consumers -->
+      <section id="producers-consumers" class="fade-in">
+        <h2>Producers &amp; Consumers</h2>
         <p>
-          A portal subscribes to an ATProto relay, filters for relevant records, and presents them. The prototype demonstrates this with two components:
+          Producers write records into the network; consumers read and display them. The prototype demonstrates both roles:
         </p>
         <ul>
-          <li><strong>matadisco-publisher</strong> — listens to <a href="https://radiantearth.github.io/stac-browser/#/external/earth-search.aws.element84.com/v1/collections/sentinel-2-l2a">Element 84's Earth Search STAC catalogue</a> for new Sentinel-2 imagery and publishes records into the ATProto network.</li>
-          <li><strong>matadisco-viewer</strong> — subscribes to a <a href="https://github.com/bluesky-social/jetstream">Bluesky Jetstream</a> relay, filters for Matadisco records, and displays them with previews.</li>
+          <li><strong><a href="https://github.com/vmx/sentinel-to-atproto/">sentinel-to-atproto</a></strong> (producer) — listens to <a href="https://radiantearth.github.io/stac-browser/#/external/earth-search.aws.element84.com/v1/collections/sentinel-2-l2a">Element 84's Earth Search STAC catalogue</a> for new Sentinel-2 imagery and writes records to a PDS.</li>
+          <li><strong><a href="https://github.com/vmx/gdi-de-csw-to-atproto/">gdi-de-csw-to-atproto</a></strong> (producer) — imports metadata from the <a href="https://geodatenkatalog.de">German geodata catalogue (GDI-DE)</a> via CSW and publishes records to ATProto.</li>
+          <li><strong><a href="https://vmx.github.io/matadisco-viewer/">matadisco-viewer</a></strong> (consumer) — subscribes to a <a href="https://github.com/bluesky-social/jetstream">Bluesky Jetstream</a> relay or reads from a PDS, filters for Matadisco records, and displays them as a portal with previews.</li>
+          <li><strong><a href="https://ipfs-fdn.github.io/matadisco-geo-viewer/">matadisco-geo-viewer</a></strong> (consumer) — a viewer specialised for geospatial metadata records with support for <a href="https://stacspec.org/">STAC</a> metadata, rendering spatial previews on a map. Supports consumption from both Jetstream and PDS.</li>
         </ul>
         <p>
           Because records flow through an open network, institutions manage their catalogues independently while participating in shared discovery.
@@ -616,7 +617,7 @@
             <span class="card-arrow">&rarr;</span>
           </a>
 
-          <a href="https://github.com/vmx/matadisco" class="card">
+          <a href="https://github.com/ipfs-fdn/matadisco" class="card">
             <span class="card-title">GitHub</span>
             <span class="card-desc">Clone the repo, open issues, propose schema changes</span>
             <span class="card-arrow">&rarr;</span>
@@ -642,13 +643,12 @@
       <section class="fade-in">
         <h2>What's next</h2>
         <ul>
-          <li>Additional geodata sources, such as the <a href="https://geodatenkatalog.de">German geodata catalogue</a></li>
           <li>Image-based sources like GLAM collections using <a href="https://iiif.io/">IIIF</a></li>
           <li>Non-image sources — <a href="https://www.ardaudiothek.de/">podcasts</a>, research datasets, publications</li>
           <li>Schema evolution informed by real-world use across different domains</li>
         </ul>
         <p>
-          Publish records under your own namespace, build a portal for your community, or <a href="https://github.com/vmx/matadisco">propose changes to the schema</a>. We'd love to hear from anyone working in open data, metadata standards, or scientific infrastructure.
+          Publish records under your own namespace, build a portal for your community, or <a href="https://github.com/ipfs-fdn/matadisco">propose changes to the schema</a>. We'd love to hear from anyone working in open data, metadata standards, or scientific infrastructure.
         </p>
       </section>
 
@@ -661,7 +661,7 @@
   <!-- Footer -->
   <footer>
     <div class="footer-links">
-      <a href="https://github.com/vmx/matadisco">GitHub</a>
+      <a href="https://github.com/ipfs-fdn/matadisco">GitHub</a>
       <a href="https://atproto.com/">ATProto</a>
       <a href="https://ipfsfoundation.org/">IPFS Foundation</a>
       <a href="https://vmx.github.io/matadisco-viewer/">Demo</a>
