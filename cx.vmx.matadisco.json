@@ -25,23 +25,27 @@
             "description": "A URI that links to resource containing the metadata"
           },
           "preview": {
-            "type": "object",
-            "required": [
-              "mimeType"
-            ],
-            "properties": {
-              "mimeType": {
-                "type": "string",
-                "description": "The media type the preview has"
-              },
-              "url": {
-                "type": "string",
-                "format": "uri",
-                "description": "The URL to the preview"
-              }
-            },
-            "description": "Preview of the data"
+            "type": "ref",
+            "ref": "#preview"
           }
+        }
+      }
+    },
+    "preview": {
+      "type": "object",
+      "description": "Preview of the data",
+      "required": [
+        "mimeType"
+      ],
+      "properties": {
+        "mimeType": {
+          "type": "string",
+          "description": "The media type the preview has"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "The URL to the preview"
         }
       }
     }
