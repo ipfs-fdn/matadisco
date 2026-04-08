@@ -60,8 +60,8 @@ Metadisco records can be used to build your own portals or workflows.
 
 
 [ATProto]: https://atproto.com/
-[announcement blog post of the IPFS Foundation]: TODO
-[more technical one at @vmx' blog]: TODO
+[announcement blog post of the IPFS Foundation]: https://ipfsfoundation.org/matadisco-can-we-bootstrap-public-data-discovery-with-atproto/
+[more technical one at @vmx' blog]: https://vmx.cx/cgi-bin/blog/index.cgi/matadisco%3A2026-03-23%3Aen%2CATProto%2Cgeo
 [Lexicon Schema]: https://atproto.com/specs/lexicon
 [MLF]: https://mlf.lol/
 [cx.vmx.matadisco.json]: cx.vmx.matadisco.json
