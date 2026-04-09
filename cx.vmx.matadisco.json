@@ -27,6 +27,10 @@
           "preview": {
             "type": "ref",
             "ref": "#preview"
+          },
+          "tags": {
+            "type": "ref",
+            "ref": "#tags"
           }
         }
       }
@@ -48,6 +52,16 @@
           "description": "The URL to the preview"
         }
       }
+    },
+    "tags": {
+      "type": "array",
+      "description": "Tags that describe the metadata. A tag might have a corresponding top-level key with the same name.",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 200
+      },
+      "maxLength": 20
     }
   }
 }
