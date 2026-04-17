@@ -5,6 +5,7 @@ record matadisco {
     /// A URI that links to resource containing the metadata
     resource!: Uri,
     preview: preview,
+    tags: tags,
 }
 
 /// Preview of the data
@@ -13,4 +14,15 @@ def type preview = {
     mimeType!: string,
     /// The URL to the preview
     url: Uri,
-}
+};
+
+/// Tags that describe the metadata. A tag might have a corresponding top-level key with the same name.
+def type tags = tag[] constrained {
+    maxLength: 20,
+};
+
+/// A single tag
+inline type tag = string constrained {
+    minLength: 1,
+    maxLength: 200,
+};

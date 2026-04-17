@@ -16,18 +16,32 @@ The central piece of Matadisco is the [Lexicon schema]. To make it easier to rea
 ```mlf
 /// A Matadisco record
 record matadisco {
-    /// The time the original metadata/data was created
+    /// The time the original metadata/data was published
     publishedAt!: Datetime,
     /// A URI that links to resource containing the metadata
     resource!: Uri,
-    /// Preview of the data
-    preview: {
-        /// The media type the preview has
-        mimeType!: string,
-        /// The URL to the preview
-        url: Uri,
-    },
+    preview: preview,
+    tags: tags,
 }
+
+/// Preview of the data
+def type preview = {
+    /// The media type the preview has
+    mimeType!: string,
+    /// The URL to the preview
+    url: Uri,
+};
+
+/// Tags that describe the metadata. A tag might have a corresponding top-level key with the same name.
+def type tags = tag[] constrained {
+    maxLength: 20,
+};
+
+/// A single tag
+inline type tag = string constrained {
+    minLength: 1,
+    maxLength: 200,
+};
 ```
 
 See [cx.vmx.matadisco.json] for the ATProto Lexicon schema in its usual JSON format.
