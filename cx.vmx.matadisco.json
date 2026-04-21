@@ -6,7 +6,7 @@
     "main": {
       "type": "record",
       "description": "A Matadisco record",
-      "key": "tid",
+      "key": "any",
       "record": {
         "type": "object",
         "required": [

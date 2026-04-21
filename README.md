@@ -15,6 +15,7 @@ The central piece of Matadisco is the [Lexicon schema]. To make it easier to rea
 
 ```mlf
 /// A Matadisco record
+@key("any")
 record matadisco {
     /// The time the original metadata/data was published
     publishedAt!: Datetime,

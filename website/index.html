@@ -565,59 +565,61 @@
 <table>
 <tr><td class=line-number>1</td><td class=line><span class='comment'>/// A Matadisco record</span>
 </td></tr>
-<tr><td class=line-number>2</td><td class=line><span class='keyword'>record</span> <span class='type'>matadisco</span> <span class='punctuation bracket'>{</span>
+<tr><td class=line-number>2</td><td class=line><span class='punctuation special'>@</span><span class='attribute'>key</span><span class='punctuation bracket'>(</span><span class='string'>&quot;any&quot;</span><span class='punctuation bracket'>)</span>
 </td></tr>
-<tr><td class=line-number>3</td><td class=line>    <span class='comment'>/// The time the original metadata/data was published</span>
+<tr><td class=line-number>3</td><td class=line><span class='keyword'>record</span> <span class='type'>matadisco</span> <span class='punctuation bracket'>{</span>
 </td></tr>
-<tr><td class=line-number>4</td><td class=line>    <span class='property'>publishedAt</span><span class='keyword'>!</span><span class='operator'>:</span> <span class='type'>Datetime</span><span class='punctuation delimiter'>,</span>
+<tr><td class=line-number>4</td><td class=line>    <span class='comment'>/// The time the original metadata/data was published</span>
 </td></tr>
-<tr><td class=line-number>5</td><td class=line>    <span class='comment'>/// A URI that links to resource containing the metadata</span>
+<tr><td class=line-number>5</td><td class=line>    <span class='property'>publishedAt</span><span class='keyword'>!</span><span class='operator'>:</span> <span class='type'>Datetime</span><span class='punctuation delimiter'>,</span>
 </td></tr>
-<tr><td class=line-number>6</td><td class=line>    <span class='property'>resource</span><span class='keyword'>!</span><span class='operator'>:</span> <span class='type'>Uri</span><span class='punctuation delimiter'>,</span>
+<tr><td class=line-number>6</td><td class=line>    <span class='comment'>/// A URI that links to resource containing the metadata</span>
 </td></tr>
-<tr><td class=line-number>7</td><td class=line>    <span class='property'>preview</span><span class='operator'>:</span> <span class='type'>preview</span><span class='punctuation delimiter'>,</span>
+<tr><td class=line-number>7</td><td class=line>    <span class='property'>resource</span><span class='keyword'>!</span><span class='operator'>:</span> <span class='type'>Uri</span><span class='punctuation delimiter'>,</span>
 </td></tr>
-<tr><td class=line-number>8</td><td class=line>    <span class='property'>tags</span><span class='operator'>:</span> <span class='type'>tags</span><span class='punctuation delimiter'>,</span>
+<tr><td class=line-number>8</td><td class=line>    <span class='property'>preview</span><span class='operator'>:</span> <span class='type'>preview</span><span class='punctuation delimiter'>,</span>
 </td></tr>
-<tr><td class=line-number>9</td><td class=line><span class='punctuation bracket'>}</span>
+<tr><td class=line-number>9</td><td class=line>    <span class='property'>tags</span><span class='operator'>:</span> <span class='type'>tags</span><span class='punctuation delimiter'>,</span>
 </td></tr>
-<tr><td class=line-number>10</td><td class=line>
+<tr><td class=line-number>10</td><td class=line><span class='punctuation bracket'>}</span>
 </td></tr>
-<tr><td class=line-number>11</td><td class=line><span class='comment'>/// Preview of the data</span>
+<tr><td class=line-number>11</td><td class=line>
 </td></tr>
-<tr><td class=line-number>12</td><td class=line><span class='keyword'>def</span> <span class='keyword'>type</span> <span class='type'>preview</span> <span class='operator'>=</span> <span class='punctuation bracket'>{</span>
+<tr><td class=line-number>12</td><td class=line><span class='comment'>/// Preview of the data</span>
 </td></tr>
-<tr><td class=line-number>13</td><td class=line>    <span class='comment'>/// The media type the preview has</span>
+<tr><td class=line-number>13</td><td class=line><span class='keyword'>def</span> <span class='keyword'>type</span> <span class='type'>preview</span> <span class='operator'>=</span> <span class='punctuation bracket'>{</span>
 </td></tr>
-<tr><td class=line-number>14</td><td class=line>    <span class='property'>mimeType</span><span class='keyword'>!</span><span class='operator'>:</span> <span class='type builtin'>string</span><span class='punctuation delimiter'>,</span>
+<tr><td class=line-number>14</td><td class=line>    <span class='comment'>/// The media type the preview has</span>
 </td></tr>
-<tr><td class=line-number>15</td><td class=line>    <span class='comment'>/// The URL to the preview</span>
+<tr><td class=line-number>15</td><td class=line>    <span class='property'>mimeType</span><span class='keyword'>!</span><span class='operator'>:</span> <span class='type builtin'>string</span><span class='punctuation delimiter'>,</span>
 </td></tr>
-<tr><td class=line-number>16</td><td class=line>    <span class='property'>url</span><span class='operator'>:</span> <span class='type'>Uri</span><span class='punctuation delimiter'>,</span>
+<tr><td class=line-number>16</td><td class=line>    <span class='comment'>/// The URL to the preview</span>
 </td></tr>
-<tr><td class=line-number>17</td><td class=line><span class='punctuation bracket'>}</span><span class='punctuation delimiter'>;</span>
+<tr><td class=line-number>17</td><td class=line>    <span class='property'>url</span><span class='operator'>:</span> <span class='type'>Uri</span><span class='punctuation delimiter'>,</span>
 </td></tr>
-<tr><td class=line-number>18</td><td class=line>
+<tr><td class=line-number>18</td><td class=line><span class='punctuation bracket'>}</span><span class='punctuation delimiter'>;</span>
 </td></tr>
-<tr><td class=line-number>19</td><td class=line><span class='comment'>/// Tags that describe the metadata. A tag might have a corresponding top-level key with the same name.</span>
+<tr><td class=line-number>19</td><td class=line>
 </td></tr>
-<tr><td class=line-number>20</td><td class=line><span class='keyword'>def</span> <span class='keyword'>type</span> <span class='type'>tags</span> <span class='operator'>=</span> <span class='type'>tag</span><span class='punctuation bracket'>[</span><span class='punctuation bracket'>]</span> <span class='keyword'>constrained</span> <span class='punctuation bracket'>{</span>
+<tr><td class=line-number>20</td><td class=line><span class='comment'>/// Tags that describe the metadata. A tag might have a corresponding top-level key with the same name.</span>
 </td></tr>
-<tr><td class=line-number>21</td><td class=line>    maxLength<span class='operator'>:</span> <span class='number'>20</span><span class='punctuation delimiter'>,</span>
+<tr><td class=line-number>21</td><td class=line><span class='keyword'>def</span> <span class='keyword'>type</span> <span class='type'>tags</span> <span class='operator'>=</span> <span class='type'>tag</span><span class='punctuation bracket'>[</span><span class='punctuation bracket'>]</span> <span class='keyword'>constrained</span> <span class='punctuation bracket'>{</span>
 </td></tr>
-<tr><td class=line-number>22</td><td class=line><span class='punctuation bracket'>}</span><span class='punctuation delimiter'>;</span>
+<tr><td class=line-number>22</td><td class=line>    maxLength<span class='operator'>:</span> <span class='number'>20</span><span class='punctuation delimiter'>,</span>
 </td></tr>
-<tr><td class=line-number>23</td><td class=line>
+<tr><td class=line-number>23</td><td class=line><span class='punctuation bracket'>}</span><span class='punctuation delimiter'>;</span>
 </td></tr>
-<tr><td class=line-number>24</td><td class=line><span class='comment'>/// A single tag</span>
+<tr><td class=line-number>24</td><td class=line>
 </td></tr>
-<tr><td class=line-number>25</td><td class=line><span class='keyword'>inline</span> <span class='keyword'>type</span> <span class='type'>tag</span> <span class='operator'>=</span> <span class='type builtin'>string</span> <span class='keyword'>constrained</span> <span class='punctuation bracket'>{</span>
+<tr><td class=line-number>25</td><td class=line><span class='comment'>/// A single tag</span>
 </td></tr>
-<tr><td class=line-number>26</td><td class=line>    minLength<span class='operator'>:</span> <span class='number'>1</span><span class='punctuation delimiter'>,</span>
+<tr><td class=line-number>26</td><td class=line><span class='keyword'>inline</span> <span class='keyword'>type</span> <span class='type'>tag</span> <span class='operator'>=</span> <span class='type builtin'>string</span> <span class='keyword'>constrained</span> <span class='punctuation bracket'>{</span>
 </td></tr>
-<tr><td class=line-number>27</td><td class=line>    maxLength<span class='operator'>:</span> <span class='number'>200</span><span class='punctuation delimiter'>,</span>
+<tr><td class=line-number>27</td><td class=line>    minLength<span class='operator'>:</span> <span class='number'>1</span><span class='punctuation delimiter'>,</span>
 </td></tr>
-<tr><td class=line-number>28</td><td class=line><span class='punctuation bracket'>}</span><span class='punctuation delimiter'>;</span>
+<tr><td class=line-number>28</td><td class=line>    maxLength<span class='operator'>:</span> <span class='number'>200</span><span class='punctuation delimiter'>,</span>
+</td></tr>
+<tr><td class=line-number>29</td><td class=line><span class='punctuation bracket'>}</span><span class='punctuation delimiter'>;</span>
 </td></tr>
 </table>
         </div>
