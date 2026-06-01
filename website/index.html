@@ -659,13 +659,14 @@
       <section id="producers-consumers" class="fade-in">
         <h2>Producers &amp; Consumers</h2>
         <p>
-          Producers write records into the network; consumers read and display them. The prototype demonstrates both roles:
+          Producers write records into the network; consumers read and display them. There are already a few implementations:
         </p>
         <ul>
           <li><strong><a href="https://github.com/vmx/sentinel-to-atproto/">sentinel-to-atproto</a></strong> (producer) — listens to <a href="https://radiantearth.github.io/stac-browser/#/external/earth-search.aws.element84.com/v1/collections/sentinel-2-l2a">Element 84's Earth Search STAC catalogue</a> for new Sentinel-2 imagery and writes records to a PDS.</li>
           <li><strong><a href="https://github.com/vmx/gdi-de-csw-to-atproto/">gdi-de-csw-to-atproto</a></strong> (producer) — imports metadata from the <a href="https://geodatenkatalog.de">German geodata catalogue (GDI-DE)</a> via CSW and publishes records to ATProto.</li>
           <li><strong><a href="https://vmx.github.io/matadisco-viewer/">matadisco-viewer</a></strong> (consumer) — subscribes to a <a href="https://github.com/bluesky-social/jetstream">Bluesky Jetstream</a> relay or reads from a PDS, filters for Matadisco records, and displays them as a portal with previews.</li>
           <li><strong><a href="https://ipfs-fdn.github.io/matadisco-geo-viewer/">matadisco-geo-viewer</a></strong> (consumer) — a viewer specialised for geospatial metadata records with support for <a href="https://stacspec.org/">STAC</a> metadata, rendering spatial previews on a map. Supports consumption from both Jetstream and PDS.</li>
+          <li><strong><a href="https://niiifty.com/">niiifty</a></strong> (producer &amp; consumer) — publishes Matadisco records of <a href="https://iiif.io/">IIIF</a> (International Image Interoperability Framework) manifests (backed by IPFS storage) and provides a dedicated AppView with AI-powered semantic search for discovering cultural heritage media.</li>
         </ul>
         <p>
           Because records flow through an open network, institutions manage their catalogues independently while participating in shared discovery.
