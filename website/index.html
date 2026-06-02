@@ -659,7 +659,9 @@
       <section id="producers-consumers" class="fade-in">
         <h2>Producers &amp; Consumers</h2>
         <p>
-          Producers write records into the network; consumers read and display them. There are already a few implementations:
+          Producers write records into the network; consumers read and display them. Because records flow through an open network, institutions manage their catalogues independently while participating in shared discovery.
+          
+See working implementations of producers, consumers, or both:
         </p>
         <ul>
           <li><strong><a href="https://github.com/vmx/sentinel-to-atproto/">sentinel-to-atproto</a></strong> (producer) — listens to <a href="https://radiantearth.github.io/stac-browser/#/external/earth-search.aws.element84.com/v1/collections/sentinel-2-l2a">Element 84's Earth Search STAC catalogue</a> for new Sentinel-2 imagery and writes records to a PDS.</li>
@@ -669,7 +671,6 @@
           <li><strong><a href="https://niiifty.com/">niiifty</a></strong> (producer &amp; consumer) — publishes Matadisco records of <a href="https://iiif.io/">IIIF</a> (International Image Interoperability Framework) manifests (backed by IPFS storage) and provides a dedicated AppView with AI-powered semantic search for discovering cultural heritage media.</li>
         </ul>
         <p>
-          Because records flow through an open network, institutions manage their catalogues independently while participating in shared discovery.
         </p>
       </section>
 
