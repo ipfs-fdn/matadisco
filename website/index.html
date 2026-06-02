@@ -486,8 +486,8 @@
         <a href="#how">How it works</a>
         <a href="#schema">The schema</a>
         <a href="#portals">Portals</a>
-        <a href="#prior-art">Prior art</a>
         <a href="#get-started">Get started</a>
+        <a href="#prior-art">Prior art</a>
       </nav>
     </aside>
 
@@ -674,18 +674,6 @@
 
       <hr class="divider fade-in">
 
-      <!-- Prior art -->
-      <section id="prior-art" class="fade-in">
-        <h2>Prior art &amp; influences</h2>
-        <ul>
-          <li><a href="https://github.com/TomNicholas/FROST">FROST</a> by Tom Nicholas — a Federated Registry of Scientific Things. His <a href="https://hackmd.io/@TomNicholas/H1KzoYrPJe">motivating essay</a> on why science needs a social network for data is an excellent starting point.</li>
-          <li><a href="https://github.com/edsilv">Edward Silverton</a>'s explorations of ATProto for <a href="https://en.wikipedia.org/wiki/International_Image_Interoperability_Framework">IIIF</a> and <a href="https://en.wikipedia.org/wiki/GLAM_(cultural_heritage)">GLAM</a> data.</li>
-          <li>Community discussions on <a href="https://bsky.app/profile/brookie.blog/post/3m6uu3emkwc2s">metadata for long-form content</a> and cross-platform discovery.</li>
-        </ul>
-      </section>
-
-      <hr class="divider fade-in">
-
       <!-- Get started -->
       <section id="get-started" class="fade-in">
         <h2>Get started</h2>
@@ -700,6 +688,12 @@
             <span class="card-arrow">&rarr;</span>
           </a>
 
+          <a href="https://pdsls.dev/at://did:plc:otu6ccrwycke33kl3h4yjhwn/cx.vmx.matadisco" class="card">
+            <span class="card-title">Raw records</span>
+            <span class="card-desc">Browse records on the ATProto dev account</span>
+            <span class="card-arrow">&rarr;</span>
+          </a>
+
           <a href="https://github.com/ipfs-fdn/matadisco" class="card">
             <span class="card-title">GitHub</span>
             <span class="card-desc">Clone the repo, open issues, propose schema changes</span>
@@ -707,17 +701,23 @@
           </a>
 
           <a href="https://github.com/vmx/sentinel-to-atproto/" class="card">
-            <span class="card-title">Publisher source</span>
-            <span class="card-desc">Cloudflare Worker that ingests Sentinel-2 metadata</span>
-            <span class="card-arrow">&rarr;</span>
-          </a>
-
-          <a href="https://pdsls.dev/at://did:plc:otu6ccrwycke33kl3h4yjhwn/cx.vmx.dev.tmp001.matadisco" class="card">
-            <span class="card-title">Raw records</span>
-            <span class="card-desc">Browse records on the ATProto dev account</span>
+            <span class="card-title">Start publishing records</span>
+            <span class="card-desc">Cloudflare Worker that scrapes Sentinel-2 data and publishes Matadisco records to ATProto</span>
             <span class="card-arrow">&rarr;</span>
           </a>
         </div>
+      </section>
+
+      <hr class="divider fade-in">
+
+      <!-- Prior art -->
+      <section id="prior-art" class="fade-in">
+        <h2>Prior art &amp; influences</h2>
+        <ul>
+          <li><a href="https://github.com/TomNicholas/FROST">FROST</a> by Tom Nicholas — a Federated Registry of Scientific Things. His <a href="https://hackmd.io/@TomNicholas/H1KzoYrPJe">motivating essay</a> on why science needs a social network for data is an excellent starting point.</li>
+          <li><a href="https://github.com/edsilv">Edward Silverton</a>'s explorations of ATProto for <a href="https://en.wikipedia.org/wiki/International_Image_Interoperability_Framework">IIIF</a> and <a href="https://en.wikipedia.org/wiki/GLAM_(cultural_heritage)">GLAM</a> data.</li>
+          <li>Community discussions on <a href="https://bsky.app/profile/brookie.blog/post/3m6uu3emkwc2s">metadata for long-form content</a> and cross-platform discovery.</li>
+        </ul>
       </section>
 
       <hr class="divider fade-in">
